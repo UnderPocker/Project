@@ -9,7 +9,7 @@ def min(a: int, b: int):
         return b
 
 
-def getFromList(data: list, index: int):
+def get_from_list(data: list, index: int):
     return data[index]
 
 
