@@ -2,6 +2,7 @@ import pytest
 
 from fun import hi, min, get_from_list
 
+
 @pytest.mark.parametrize(
     "a, b, result",
     [
@@ -12,6 +13,7 @@ from fun import hi, min, get_from_list
 )
 def test_min_success(a, b, result):
     assert min(a, b) == result
+
 
 @pytest.mark.parametrize(
     "a, b, result",
@@ -49,7 +51,6 @@ def test_get_from_list_fail(list, index, result):
     assert get_from_list(list, index) != result
 
 
-
 def test_get_from_list_exception():
     with pytest.raises(IndexError):
         get_from_list([1, 3, 2], 4)
@@ -65,14 +66,15 @@ def test_get_from_list_exception():
 def test_hi_success(expected_output):
     assert hi() == expected_output
 
+
 # Test cases for failure scenarios
 @pytest.mark.parametrize(
     "incorrect_output",
     [
         ("Hello, User!"),  # Incorrect output
-        ("Hi, user!"),     # Case-sensitive incorrect output
-        ("Hi User"),       # Missing comma
-        ("Hi, Users!"),    # Plural form
+        ("Hi, user!"),  # Case-sensitive incorrect output
+        ("Hi User"),  # Missing comma
+        ("Hi, Users!"),  # Plural form
     ]
 )
 def test_hi_fail(incorrect_output):
